@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "e7068ac6-840b-4a71-9680-76b6a3b69688",
+		"name": "test-hekpdesk",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "30235088"
+	},
+	"item": [
+		{
+			"name": "getTicket",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/tickets/"
+			},
+			"response": []
+		},
+		{
+			"name": "PostTicket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Error en la aplicación\",\r\n    \"description\": \"La app se cierra inesperadamente\",\r\n    \"priority\": \"Alta\",\r\n    \"createdBy\": \"usuario123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/tickets/"
+			},
+			"response": []
+		},
+		{
+			"name": "PutTicket",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Error en la aplicación\",\r\n    \"description\": \"La app se cierra inesperadamente\",\r\n    \"priority\": \"Alta\",\r\n    \"status\": \"En proceso\",\r\n    \"assignedTo\": \"soporte\",\r\n    \"createdBy\": \"usuario123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/tickets/67a588fce93d0f71abcbe50f"
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteTicket",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Error en la aplicación\",\r\n    \"description\": \"La app se cierra inesperadamente\",\r\n    \"priority\": \"Alta\",\r\n    \"createdBy\": \"usuario123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/tickets/67a587c8e93d0f71abcbe50e"
+			},
+			"response": []
+		}
+	]
+}
