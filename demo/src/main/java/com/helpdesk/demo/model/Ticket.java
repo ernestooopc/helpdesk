@@ -3,18 +3,26 @@ import java.time.LocalDateTime;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 
 
 @Document(collection = "tickets")
+@Schema(description = "Entidad que representa un ticket de soporte")
 public class Ticket {
 
     @Id
+    @Schema(description = "ID del ticket", example = "67a588fce93d0f71abcbe50f")
     private String id;
 
+    @Schema(description = "Titulo del problema", example = "Problema con Correo")
     private String title; // Título del ticket
+    @Schema(description = "Descripción del problema", example = "No funciona el correo")
     private String description; // Descripción del problema
+    @Schema(description = "Estado del problema", example = "Abierto")
     private String status; // Estado: "Abierto", "En Proceso", "Cerrado"
-    private String priority; // Prioridad: "Baja", "Media", "Alta"
+    @Schema(description = "Prioridad del problema", example = "Alta")
+    private String priority; // Prioridad: "Baja", "Media", "Alta"    
     private String assignedTo; // Usuario asignado (ID del soporte)
     private String createdBy; // Usuario que creó el ticket (ID del cliente)
     private LocalDateTime createdAt; // Fecha de creación
